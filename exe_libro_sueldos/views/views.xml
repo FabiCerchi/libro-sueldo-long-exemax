@@ -89,9 +89,11 @@
                 <p t-field="p.employee_id.contract_id.amount"/>
               </div>
             </div>
-            <div class="row">
-              <p><strong>Asignaciones Familiares:</strong></p>
-              <!-- Hacer una tabla -->
+            <div>
+              <p class="m-0 p-0"><strong>Asignaciones Familiares:</strong></p>
+              <t t-foreach="p.employee_id.relative_ids" t-as="rel">
+                <p class="m-0 p-0 pl-2">CUIL <span t-field="rel.identification_id"/> - <span t-field="rel.name"/></p>
+              </t>
             </div>
             <div class="row">
               <div class="col m-0 p-0">
